@@ -1,0 +1,20 @@
+{
+  "name": "@pipeworx/mcp-cdec-ca",
+  "version": "0.1.0",
+  "description": "California Data Exchange Center (CDEC) hydrology, reservoirs, snow water",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "cdec-ca"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pipeworx-io/mcp-cdec-ca"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}
