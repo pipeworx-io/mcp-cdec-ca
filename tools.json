@@ -1,0 +1,127 @@
+[
+  {
+    "name": "station_info",
+    "description": "Station metadata.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "station_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "station_id"
+      ]
+    }
+  },
+  {
+    "name": "daily_data",
+    "description": "Daily data for (station, sensor). CDEC's -9999 missing marker is returned as value: null with missing: true, and the response counts the gaps.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "station_id": {
+          "type": "string"
+        },
+        "sensor": {
+          "type": "number"
+        },
+        "start": {
+          "type": "string",
+          "description": "YYYY-MM-DD"
+        },
+        "end": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "station_id",
+        "sensor",
+        "start"
+      ]
+    }
+  },
+  {
+    "name": "hourly_data",
+    "description": "Hourly data for (station, sensor). CDEC's -9999 missing marker is returned as value: null with missing: true, and the response counts the gaps.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "station_id": {
+          "type": "string"
+        },
+        "sensor": {
+          "type": "number"
+        },
+        "start": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "station_id",
+        "sensor",
+        "start"
+      ]
+    }
+  },
+  {
+    "name": "event_data",
+    "description": "Event-based irregular readings for (station, sensor). CDEC's -9999 missing marker is returned as value: null with missing: true.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "station_id": {
+          "type": "string"
+        },
+        "sensor": {
+          "type": "number"
+        },
+        "start": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "station_id",
+        "sensor",
+        "start"
+      ]
+    }
+  },
+  {
+    "name": "latest",
+    "description": "Most recent REAL reading for (station, sensor), looking back three days. CDEC writes -9999 into slots it has no reading for and the current day's trailing hours are routinely unwritten, so this skips those and reports how many missing slots it skipped rather than returning the marker as a number.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "station_id": {
+          "type": "string"
+        },
+        "sensor": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "station_id",
+        "sensor"
+      ]
+    }
+  },
+  {
+    "name": "reservoirs",
+    "description": "Reservoir storage snapshots.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "station_id": {
+          "type": "string"
+        }
+      }
+    }
+  }
+]
